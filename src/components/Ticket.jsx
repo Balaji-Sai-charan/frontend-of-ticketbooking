@@ -70,7 +70,7 @@ function Ticket() {
 
   useEffect(() => {
     fetch(
-      `https://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=961ea94b`
+      `https://www.omdbapi.com/?t=${title}&y=${year}&plot=full&apikey=f068fea0`
     )
       .then((res) => res.json())
       .then((data) => setmovieData(data))
@@ -83,7 +83,7 @@ function Ticket() {
  
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${mvedata.id}/credits?api_key=bee8ce9f0d5a33ee50837d31a61a64eb`
+      `https://api.themoviedb.org/3/movie/${mvedata.id}/credits?api_key=6af55c70bcc76ffe907dae67dfc81152`
     )
       .then((res) => res.json())
       .then((data) => setCredits(data.cast))
@@ -95,7 +95,7 @@ function Ticket() {
   }, []);
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${mvedata.id}/videos?api_key=bee8ce9f0d5a33ee50837d31a61a64eb`
+      `https://api.themoviedb.org/3/movie/${mvedata.id}/videos?api_key=6af55c70bcc76ffe907dae67dfc81152`
     )
       .then((res) => res.json())
       .then((data) => setTrailer(data.results))
@@ -107,7 +107,7 @@ function Ticket() {
   }, []);
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${mvedata.id}/reviews?api_key=bee8ce9f0d5a33ee50837d31a61a64eb`
+      `https://api.themoviedb.org/3/movie/${mvedata.id}/reviews?api_key=6af55c70bcc76ffe907dae67dfc81152`
     )
       .then((res) => res.json())
       .then((data) => setReview(data.results))

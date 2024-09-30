@@ -17,7 +17,7 @@ function Home() {
 
   useEffect(() => {
     fetch(
-      ` https://api.themoviedb.org/3/discover/movie?api_key=bee8ce9f0d5a33ee50837d31a61a64eb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&release_date.gte=2023-06-01T00:00:00.000Z&page=1`
+      ` https://api.themoviedb.org/3/discover/movie?api_key=6af55c70bcc76ffe907dae67dfc81152&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&release_date.gte=2023-06-01T00:00:00.000Z&page=1`
     )
       .then((res) => res.json())
       .then((data) => setMovie(data.results))
