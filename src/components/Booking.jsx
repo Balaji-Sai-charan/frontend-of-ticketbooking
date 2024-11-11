@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import {  Link, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -14,52 +14,34 @@ function Booking(props) {
   const photo = location.state.photo;
   const title = location.state.title;
   const city = location.state.city;
-  const mvedata = location.state.mvedata;
+  const mvedata=location.state.mvedata;
   var c = parseInt(cost);
 
   const [count, setCount] = useState([0, false]);
   const [activeb, setactiveb] = useState(null);
+ 
 
-  const numRows = 10;  // Set number of rows
-  const numCols = 12;  // Set number of columns
+  var timings = [
+    { value: "11", name: "11:00 A.M" },
+    { value: "14", name: "2:00 P.M" },
+    { value: "17", name: "5:00 P.M" },
+    { value: "20", name: "8:00 P.M" },
+    { value: "24", name: "10:00 P.M" },
+  ];
 
-  // Randomly generate occupied seats
-  const [occupiedSeats, setOccupiedSeats] = useState(new Set());
-
+ 
+  
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
     });
     window.scrollTo(0, 0);
-
-    // Generate random occupied seats when component mounts
-    const randomOccupiedSeats = generateRandomOccupiedSeats(numRows, numCols);
-    setOccupiedSeats(randomOccupiedSeats);
   }, []);
-
-  function generateRandomOccupiedSeats(numRows, numCols, occupiedPercentage = 0.3) {
-    const totalSeats = numRows * numCols;
-    const occupiedSeatsCount = Math.floor(totalSeats * occupiedPercentage);
-    const occupiedSeats = new Set();
-
-    while (occupiedSeats.size < occupiedSeatsCount) {
-      const randomSeat = Math.floor(Math.random() * totalSeats);
-      occupiedSeats.add(randomSeat);
-    }
-
-    return occupiedSeats;
-  }
-
   function handleselect(data) {
     setactiveb(data.name);
   }
-
-  function handleClick(data, index) {
-    if (occupiedSeats.has(index)) {
-      return; // Skip if the seat is occupied
-    }
-
+  function handleClick(data) {
     if (data.target.className === "seat") {
       data.target.className = "seat selected";
       setCount([count[0] + 1, true]);
@@ -73,17 +55,8 @@ function Booking(props) {
       setCount([a, b]);
     }
   }
-
   var d = parseInt(count[0]);
   var tc = c * d;
-
-  const timings = [
-    { value: "11", name: "11:00 A.M" },
-    { value: "14", name: "2:00 P.M" },
-    { value: "17", name: "5:00 P.M" },
-    { value: "20", name: "8:00 P.M" },
-    { value: "24", name: "10:00 P.M" },
-  ];
 
   return (
     <>
@@ -131,22 +104,147 @@ function Booking(props) {
           </ul>
 
           <div className="container" data-os="flip-up">
-            {[...Array(numRows)].map((_, rowIndex) => (
-              <div className="row1" data-aos="fade-out" key={rowIndex}>
-                {[...Array(numCols)].map((_, colIndex) => {
-                  const seatIndex = rowIndex * numCols + colIndex;
-                  return (
-                    <div
-                      key={seatIndex}
-                      id="seat"
-                      className={`seat ${occupiedSeats.has(seatIndex) ? "occupied" : ""}`}
-                      onClick={(e) => handleClick(e, seatIndex)}
-                    ></div>
-                  );
-                })}
-              </div>
-            ))}
-
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat occupied"></div>{" "}
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
+            <div className="walk" data-aos="fade-out"></div>
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat occupied"></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
+            <div className="row1" data-aos="fade-out">
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+              <div id="seat" className="seat" onClick={handleClick}></div>
+            </div>
             <div className="screen">
               <h3 className="content-screen">SCREEN THIS WAY</h3>
             </div>
