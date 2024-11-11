@@ -1,5 +1,6 @@
 const cities = [
   { name: "Vishakapatnam" },
+  { name: "Dhanbad" },
   { name: "Hyderabad" },
   { name: "Chennai" },
   { name: "Bhubaneshwar"},
