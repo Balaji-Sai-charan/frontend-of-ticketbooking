@@ -3,19 +3,19 @@ This project is a comprehensive Movie Ticket Booking System with a separate fron
 
 🌐 Live Demo: Movie Booking System
 
-📋 Project Overview
+**📋 Project Overview**
 This system allows users to browse available movies, select showtimes, and book tickets. It's structured with a React.js frontend and a Node.js + Express backend for a robust, scalable experience.
 
-Frontend Repository
+**Frontend Repository**
 Repository: Frontend of Ticket Booking
-Tech Stack: React.js, CSS, and Axios (for API requests).
+Tech Stack: React.js, CSS, and API requests.
 Features:
 Responsive UI: Designed to offer a seamless experience across desktop and mobile devices.
 Movie Display: Shows available movies, times, and theaters.
 Booking Interface: Users can select movie seats and view their selections in real-time.
 Interactive: Dynamic rendering for availability, seat selection, and booking status.
 Styling: Responsive styling for a clean, modern look.
-Backend Repository
+**Backend Repository**
 Repository: Backend of Ticket Booking
 Tech Stack: Node.js, Express.js, MongoDB, and Mongoose (for data modeling).
 Features:
@@ -24,7 +24,8 @@ Database: MongoDB used to store data on movies, bookings, and users.
 JWT Authentication: Secure login with JWT for managing user sessions and bookings.
 Seat Management: Manages seat availability and booking status to prevent overbooking.
 Error Handling: Robust error handling for a seamless user experience.
-💻 How to Run Locally
+
+**💻 How to Run Locally**
 Prerequisites
 Node.js (>= 14.x)
 MongoDB server running locally or on the cloud
@@ -76,7 +77,7 @@ Copy code
 npm start
 Both the frontend and backend should now be running locally.
 
-📂 Project Structure
+**📂 Project Structure**
 Frontend (frontend-of-ticketbooking)
 src/components/: Contains reusable UI components like MovieList, SeatSelector, etc.
 src/pages/: Main application pages (e.g., Home, Booking).
