@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+**Ticket Booking System 🎟️**
+This project is a comprehensive Movie Ticket Booking System with a separate frontend and backend designed to offer an intuitive, interactive booking experience for users.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🌐 Live Demo: Movie Booking System
 
-## Available Scripts
+📋 Project Overview
+This system allows users to browse available movies, select showtimes, and book tickets. It's structured with a React.js frontend and a Node.js + Express backend for a robust, scalable experience.
 
-In the project directory, you can run:
+Frontend Repository
+Repository: Frontend of Ticket Booking
+Tech Stack: React.js, CSS, and Axios (for API requests).
+Features:
+Responsive UI: Designed to offer a seamless experience across desktop and mobile devices.
+Movie Display: Shows available movies, times, and theaters.
+Booking Interface: Users can select movie seats and view their selections in real-time.
+Interactive: Dynamic rendering for availability, seat selection, and booking status.
+Styling: Responsive styling for a clean, modern look.
+Backend Repository
+Repository: Backend of Ticket Booking
+Tech Stack: Node.js, Express.js, MongoDB, and Mongoose (for data modeling).
+Features:
+RESTful API: Exposes endpoints to manage movies, showtimes, bookings, and user data.
+Database: MongoDB used to store data on movies, bookings, and users.
+JWT Authentication: Secure login with JWT for managing user sessions and bookings.
+Seat Management: Manages seat availability and booking status to prevent overbooking.
+Error Handling: Robust error handling for a seamless user experience.
+💻 How to Run Locally
+Prerequisites
+Node.js (>= 14.x)
+MongoDB server running locally or on the cloud
+npm (for package management)
+Installation
+Frontend Setup
+Clone the frontend repository:
+bash
+Copy code
+git clone https://github.com/Balaji-Sai-charan/frontend-of-ticketbooking.git
+Navigate to the project directory:
+bash
+Copy code
+cd frontend-of-ticketbooking
+Install dependencies:
+bash
+Copy code
+npm install
+Start the frontend:
+bash
+Copy code
+npm start
+Backend Setup
+Clone the backend repository:
 
-### `npm start`
+bash
+Copy code
+git clone https://github.com/Balaji-Sai-charan/backend-of-ticketbooking.git
+Navigate to the backend directory:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copy code
+cd backend-of-ticketbooking
+Install dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+bash
+Copy code
+npm install
+Set up environment variables by creating a .env file:
 
-### `npm test`
+plaintext
+Copy code
+MONGO_URI=your_mongo_db_connection_string
+JWT_SECRET=your_jwt_secret
+Start the backend:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copy code
+npm start
+Both the frontend and backend should now be running locally.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📂 Project Structure
+Frontend (frontend-of-ticketbooking)
+src/components/: Contains reusable UI components like MovieList, SeatSelector, etc.
+src/pages/: Main application pages (e.g., Home, Booking).
+src/services/: Functions for making API requests to the backend.
+Backend (backend-of-ticketbooking)
+controllers/: Handles the main business logic for routes.
+models/: Contains Mongoose schemas for Movies, Showtimes, Users, and Bookings.
+routes/: Defines API routes for each resource.
+utils/: Utility functions for token handling, error management, etc.
+✨ Future Enhancements
+Payment Gateway Integration: Integrate with a payment provider for ticket purchasing.
+Admin Dashboard: Interface for administrators to manage movies, showtimes, and seats.
+User Profiles: Allow users to view booking history and manage personal information.
