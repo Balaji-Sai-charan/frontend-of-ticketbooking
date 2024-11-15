@@ -87,7 +87,8 @@ controllers/: Handles the main business logic for routes.
 models/: Contains Mongoose schemas for Movies, Showtimes, Users, and Bookings.
 routes/: Defines API routes for each resource.
 utils/: Utility functions for token handling, error management, etc.
-✨ Future Enhancements
+
+**✨ Future Enhancements**
 Payment Gateway Integration: Integrate with a payment provider for ticket purchasing.
 Admin Dashboard: Interface for administrators to manage movies, showtimes, and seats.
 User Profiles: Allow users to view booking history and manage personal information.
